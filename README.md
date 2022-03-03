@@ -1,24 +1,14 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Hotwireのサンプル
 
-Things you may want to cover:
+[![Image from Gyazo](https://i.gyazo.com/473fc4ae4e2f2daa53aded358ec7b5a8.gif)](https://gyazo.com/473fc4ae4e2f2daa53aded358ec7b5a8)
 
-* Ruby version
+## Ruby version
+3.1.0
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Setup
+```
+$ bin/setup
+$ bin/rails s
+```
