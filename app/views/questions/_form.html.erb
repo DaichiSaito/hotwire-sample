@@ -3,12 +3,12 @@
   <div data-controller="select" data-select-url-value="<%= chapters_questions_path %>" data-select-param-value="curriculum_id">
     <div class="mb-3">
       <%= f.label :curriculum_id, class: 'form-label' %>
-      <%= f.collection_select :curriculum_id, Curriculum.all, :id, :name, { prompt: "Select a curriculum", selected: f.object.chapter ? f.object.chapter.curriculum_id : nil }, { class: 'form-select', data: { action: "change->select#change" } } %>
+      <%= f.collection_select :curriculum_id, Curriculum.all, :id, :name, { prompt: "Select a curriculum", selected: f.object.chapter ? f.object.chapter.curriculum_id : nil }, { class: 'form-select', data: { select_target: "curriculumSelect", action: "change->select#change" } } %>
     </div>
 
     <div class="mb-3">
       <%= f.label :chapter_id, class: 'form-label' %>
-      <%= f.collection_select :chapter_id, (f.object.chapter ? Chapter.where(curriculum_id: f.object.chapter.curriculum_id) : []), :id, :name, {}, { id: nil, class: 'form-select', data: { select_target: "select" } } %>
+      <%= f.collection_select :chapter_id, (f.object.chapter ? Chapter.where(curriculum_id: f.object.chapter.curriculum_id) : []), :id, :name, {}, { id: nil, class: 'form-select', data: { select_target: "select", action: "change->select#chapterChange" } } %>
     </div>
   </div>
 
@@ -22,5 +22,9 @@
   </div>
   <div class="mb-3">
     <%= f.submit class: 'btn btn-primary' %>
+  </div>
+
+  <div id="lists">
+    初期値は空っぽ
   </div>
 <% end %>
