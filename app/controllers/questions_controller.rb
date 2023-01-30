@@ -50,6 +50,12 @@ class QuestionsController < ApplicationController
     end
   end
 
+  def lists
+    p params[:hoge_id]
+    p params[:fuga_id]
+    @lists = [SecureRandom.hex(8), SecureRandom.hex(8), SecureRandom.hex(8)]
+  end
+
   private
 
   def question_params
